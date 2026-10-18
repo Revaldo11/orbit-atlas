@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#080b10" />
+    <title>Orbit Atlas · A solar system explorer</title>
+    <meta
+      name="description"
+      content="Explore eight worlds in an interactive 3D solar system. Adjust time, trace orbits, and get closer to every planet."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="universe" aria-label="Interactive 3D solar system"></div>
+    <div id="labels"></div>
+    <header>
+      <a class="brand" href="./"
+        ><span class="logo">◎</span> ORBIT<span class="light">ATLAS</span
+        ><span class="edition">SOLAR SYSTEM EXPLORER</span></a
+      >
+      <div class="live"><i></i> LIVE SIMULATION</div>
+    </header>
+    <main>
+      <div class="intro">
+        <div class="eyebrow">OUR COSMIC NEIGHBORHOOD</div>
+        <h1>A little perspective.</h1>
+        <p>Eight worlds. One star. Endless discovery.</p>
+      </div>
+      <section id="missions" aria-label="Misi antariksa">
+        <div class="eyebrow">MISI ANTARIKSA</div>
+        <div id="missions-list"></div>
+        <p>Lintasan ilustratif · animasi mengikuti kontrol waktu</p>
+      </section>
+      <aside id="panel">
+        <div class="panel-top">
+          <span class="eyebrow" id="category">THE CENTER OF IT ALL</span
+          ><span id="number">00 / 08</span>
+        </div>
+        <div id="planet-icon"></div>
+        <h2 id="name">The Sun</h2>
+        <p id="description"></p>
+        <div class="stats" id="stats"></div>
+        <button id="focus" class="focus">
+          ⌖ <span>Get closer</span><span>↗</span>
+        </button>
+        <div class="panel-note">Select a world to explore its story</div>
+      </aside>
+      <section id="tour-panel" hidden aria-label="Tur tata surya">
+        <div class="tour-heading">
+          <span class="eyebrow">PERJALANAN TATA SURYA</span
+          ><button id="tour-exit" aria-label="Keluar dari tur">×</button>
+        </div>
+        <div id="tour-story" aria-live="polite">
+          <div id="tour-count"></div>
+          <h2 id="tour-title"></h2>
+          <p id="tour-narration"></p>
+        </div>
+        <div class="tour-track"><div id="tour-progress"></div></div>
+        <div class="tour-controls">
+          <button id="tour-prev" aria-label="Planet sebelumnya">←</button
+          ><button id="tour-pause">Jeda tur</button
+          ><button id="tour-next">Berikutnya →</button>
+        </div>
+        <p class="tour-note">Kamera berpindah otomatis setiap 14 detik.</p>
+      </section>
+      <div class="view-tools">
+        <button id="tour-start">▷ Mulai tur</button
+        ><button id="reset" title="Reset to solar system overview">
+          ⌖ <span>System view</span></button
+        ><button id="labels-toggle" aria-pressed="true">
+          Labels <span class="switch"></span></button
+        ><button id="trails-toggle" aria-pressed="true">
+          Orbits <span class="switch"></span>
+        </button>
+      </div>
+      <div class="hint">
+        ⤧ &nbsp; Drag to orbit <span>·</span> Scroll to zoom
+        <span>·</span> Click a planet to explore
+      </div>
+    </main>
+    <footer>
+      <div class="timeline">
+        <button id="pause" class="pause" aria-label="Pause simulation">
+          II
+        </button>
+        <div class="time-label">
+          <span>TIME CONTROLS</span
+          ><strong id="status">Simulation running</strong>
+        </div>
+        <div class="speed">
+          <label for="speed"
+            >Orbital speed <output id="speed-value">1×</output></label
+          ><input
+            id="speed"
+            type="range"
+            min="0.1"
+            max="5"
+            step="0.1"
+            value="1"
+          />
+        </div>
+        <div class="elapsed">
+          <span>SIMULATED DAYS</span><strong id="days">0000.0</strong>
+        </div>
+        <div class="scale-note">
+          <i></i> Made for exploration<br /><span
+            >Sizes & distances are illustrative</span
+          >
+        </div>
+      </div>
+      <nav id="planets" aria-label="Choose a celestial body"></nav>
+      <div class="footer-bottom">
+        <span>THE SOLAR SYSTEM <b> / </b> MILKY WAY</span
+        ><span>LOOK UP. STAY CURIOUS. <span class="star">✧</span></span>
+      </div>
+    </footer>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
